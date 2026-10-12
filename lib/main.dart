@@ -122,3 +122,93 @@ class OverflowText extends StatelessWidget {
 
 class AlignmentText extends StatelessWidget {
   const AlignmentText({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.blueGrey),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          SizedBox(
+            width: double
+                .infinity, //PAKE Double.infinity biar teksnya bisa full lebar
+            child: Text(
+              'Teks Rata Kiri (Left)',
+              textAlign: TextAlign.left,
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+          SizedBox(height: 12),
+          SizedBox(
+            width: double.infinity,
+            child: Text(
+              'Teks Rata Tengah (Center)',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+          SizedBox(height: 12),
+          SizedBox(
+            width: double.infinity,
+            child: Text(
+              'Teks Rata Kanan (Right)',
+              textAlign: TextAlign.right,
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+          SizedBox(height: 12),
+          SizedBox(
+            width: double.infinity,
+            child: Text(
+              'Justify: Flutter adalah framework untuk membuat aplikasi menggunakan satu codebase yang responsif.',
+              textAlign: TextAlign.justify,
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class RichTextWidget extends StatelessWidget {
+  const RichTextWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.orange),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: RichText(
+        text: const TextSpan(
+          style: TextStyle(fontSize: 18, color: Colors.black),
+          children: [
+            TextSpan(text: 'Mari belajar Flutter '),
+            TextSpan(
+              text: 'Flutter',
+              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
+            ),
+            TextSpan(text: ' dan '),
+            TextSpan(
+              text: 'Dart',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.green,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
